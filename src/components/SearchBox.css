@@ -1,0 +1,10 @@
+.search-bar{
+    padding:1em;
+  }
+
+input{
+    padding: 1em;
+    background-color: #e0e1dd;
+    border: none;
+    border-radius: .5rem;
+}

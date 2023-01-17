@@ -1,0 +1,16 @@
+.card-container{
+    background-color: #415a77;
+    display:inline-block;
+    border-radius:.5rem;
+    padding:1rem;
+    margin:1rem;
+    transform:translateZ(0);
+    transition:transform 0.25s ease-out;
+    border-width:.25rem;
+    box-shadow:4px 4px 8px 0px rgba( 0, 0, 0, 0.2 );
+    text-align: center;
+  }
+  
+  .card-container:hover{
+    transform:scale(1.05);
+  }

@@ -1,0 +1,15 @@
+
+@font-face {
+    font-family: 'oriental_catslight';
+    src: url('../../public/orientalcatslight-2ozb8-webfont.woff2') format('woff2'),
+         url('../../public/orientalcatslight-2ozb8-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1{
+    font-family: oriental_catslight;
+    font-size: 4em;
+    font-weight: 100;
+}
