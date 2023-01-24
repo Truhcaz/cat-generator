@@ -2,6 +2,8 @@
 
 An interactive Web App with React to generate cats 🐱
 
+[Visit Website](https://truhcaz.github.io/cat-generator/)
+
 Using :
 
 *jsonplaceholder.typicode.com API to generate cats data
