@@ -1,31 +1,24 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll"
 import './App.css';
 
-class App extends Component{
-    constructor(){
-        super()
-        this.state = {
-            cats:[],
-            searchfield:''
-        }
+function App() {
+
+    const [cats, setCats] = useState([]);
+    const [searchfield, setSearchfield] =useState(''); 
+
+    useEffect (() => {
+            fetch('https://jsonplaceholder.typicode.com/users')
+                .then(response => response.json())
+                .then(users => { setCats(users)})
+        }, [])
+
+    const onSearchChange = (event) => {
+        setSearchfield(event.target.value)
     }
 
-    componentDidMount(){
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response=> response.json())
-            .then(users => {this.setState({cats:users})})
-    }
-
-    onSearchChange = (event) => {
-
-        this.setState({searchfield: event.target.value})
-        }
-
-    render(){
-        const { cats, searchfield} = this.state;
         const filteredcats = cats.filter(cat =>{
             return cat.name.toLowerCase().includes(searchfield.toLowerCase());
         })
@@ -38,7 +31,7 @@ class App extends Component{
             
             <h1 className='title'> Cat Generator </h1>
             <div className='search-bar'>
-            <SearchBox searchChange={this.onSearchChange}/>
+            <SearchBox searchChange={onSearchChange}/>
             </div>
 
             <Scroll>
@@ -46,7 +39,6 @@ class App extends Component{
             </Scroll>
         </React.Fragment>
     );}
-    }
 }
 
 export default App;
